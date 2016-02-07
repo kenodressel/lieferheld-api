@@ -25,15 +25,15 @@ info.createUser()
                         console.log(order.payment.method.fast_lane);
                         var address = {
                             city: "Berlin",
-                            email: "***REMOVED***",
-                            lastname: "***REMOVED***",
-                            latitude: ***REMOVED***,
-                            longitude: ***REMOVED***,
-                            name: "***REMOVED***",
-                            phone: "***REMOVED***",
-                            street_name: "***REMOVED***",
-                            street_number: "***REMOVED***",
-                            zipcode: "***REMOVED***"
+                            email: "test@example",
+                            lastname: "lastname",
+                            latitude: 52.520645,
+                            longitude: 13.409779,
+                            name: "name",
+                            phone: "+49 1234512345",
+                            street_name: "street_name",
+                            street_number: "1",
+                            zipcode: "12345"
                         };
 
                         for (var key in address) {
