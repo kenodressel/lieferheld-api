@@ -11,5 +11,8 @@
     "url": "https://gitlab.thepiwo.de/ardobras/lieferheld.git"
   },
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "request": "^2.69.0"
+  }
 }
