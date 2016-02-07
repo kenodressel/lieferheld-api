@@ -1,13 +1,7 @@
 var request = require('request');
 var auth = require('./auth');
 var helper = require('./helpers');
-
-var c = {
-    url: "https://www.lieferheld.de/api"
-};
-
-var APIKEY = "", TOKEN = "";
-
+var c = require('./config.json');
 
 var api = {};
 

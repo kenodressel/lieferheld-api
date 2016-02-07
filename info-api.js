@@ -1,14 +1,11 @@
 var request = require('request');
 var auth = require('./auth');
 var helper = require('./helpers');
-
-var c = {
-    url: "https://www.lieferheld.de/api"
-};
+var c = require('./config.json');
 
 var api = {};
+
 api.createUser = function () {
-    console.log("test");
     return new Promise(function (resolve, reject) {
         request.post({
             'url': c.url + '/users/',
