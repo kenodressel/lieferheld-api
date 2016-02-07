@@ -4,7 +4,6 @@ var handleResponse = function (resolve, reject) {
             throw error;
         } else {
             if (response.statusCode.toString().match(/^2\d\d$/)) {
-                console.log(JSON.parse(body), response.statusCode);
                 resolve(JSON.parse(body));
             } else {
                 console.error(JSON.parse(body), response.statusCode);
