@@ -1,4 +1,5 @@
 var api = require('./order-api.js');
+var info = require('./info-api.js');
 
 var item = {
   "size": {"reduced_price": 1.5, "price": 1.5, "offer_id": "", "name": "normal"},
