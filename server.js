@@ -2,18 +2,26 @@ var auth = require('./auth');
 var api = require('./order-api');
 var info = require('./info-api');
 
-var item = {
-    "size": {"reduced_price": 1.5, "price": 1.5, "offer_id": "", "name": "normal"},
-    "flavors": {"items": [], "id": "0"},
-    "main_item": true,
-    "name": "Naan ",
-    "tags": [],
-    "sub_item": false,
-    "quantity": 2,
-    "id": "1101721",
-    "comments": "",
-    "description": "gebackenes Fladenbrot"
+module.exports = {
+  info:info,
+  api:api,
+  auth:auth
 };
+
+/*
+
+ var item = {
+ "size": {"reduced_price": 1.5, "price": 1.5, "offer_id": "", "name": "normal"},
+ "flavors": {"items": [], "id": "0"},
+ "main_item": true,
+ "name": "Naan ",
+ "tags": [],
+ "sub_item": false,
+ "quantity": 2,
+ "id": "1101721",
+ "comments": "",
+ "description": "gebackenes Fladenbrot"
+ };
 
 info.createUser()
     .then(function (data) {
@@ -56,3 +64,4 @@ info.createUser()
                     });
             });
     });
+*/
