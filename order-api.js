@@ -38,10 +38,26 @@ api.createOrder = function(userID, restaurantID) {
 
 api.addToCart = function(order, item) {
   order.sections[0].items.push(item);
+  order.operation = "validate";
   return new Promise(function (resolve, reject) {
     request
       .put({
-        'url': c.url + '/users/' + userID + '/orders/' + order.id + '/',
+        'url': c.url + '/users/' + order.general.user_id + '/orders/' + order.id + '/',
+        headers: {
+          'authentication':getAuth(),
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(order)
+      }, handleResponse(resolve, reject));
+  });
+};
+
+api.checkout = function(order) {
+  order.operation = "final";
+  return new Promise(function (resolve, reject) {
+    request
+      .put({
+        'url': c.url + '/users/' + order.general.user_id + '/orders/' + order.id + '/',
         headers: {
           'authentication':getAuth(),
           "Content-Type": "application/json"
