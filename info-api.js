@@ -19,10 +19,12 @@ api.getLocationDetails = function (city, zipcode, street) {
     });
 };
 
-api.getRestaurants = function (lat, lon) {
+api.getRestaurants = function (lat, lon, offset, limit) {
+    offset = offset === undefined ? 0 : offset;
+    limit = limit === undefined ? 10000 : limit;
     return new Promise(function (resolve, reject) {
         request.get({
-            'url': `${c.url}/restaurants/?lat=${lat}&lon=${lon}&offset=0&limit=1000&fields=general%2Crating%2Caddress%2Cavailability%2Cdistance%2Cpayment_methods`,
+            'url': `${c.url}/restaurants/?lat=${lat}&lon=${lon}&offset=${offset}&limit=${limit}&fields=general%2Crating%2Caddress%2Cavailability%2Cdistance%2Cpayment_methods`,
             headers: {
                 'authentication': getAuth()
             }
@@ -41,10 +43,12 @@ api.getRestaurantDetails = function (id) {
     });
 };
 
-api.getRestaurantComments = function (id) {
+api.getRestaurantComments = function (id, offset, limit) {
+    offset = offset === undefined ? 0 : offset;
+    limit = limit === undefined ? 10000 : limit;
     return new Promise(function (resolve, reject) {
         request.get({
-            'url': `${c.url}/restaurants/${id}/comments/?fields=comment&offset=0&limit=1000`,
+            'url': `${c.url}/restaurants/${id}/comments/?fields=comment&offset=${offset}&limit=${limit}`,
             headers: {
                 'authentication': getAuth()
             }
